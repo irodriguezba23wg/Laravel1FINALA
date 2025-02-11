@@ -1,0 +1,100 @@
+@url = http://localhost:8000
+
+
+
+
+
+### POST REGISTER
+POST {{url}}/api/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "Iker",
+    "email" : "IkerRodri@gmail.com",
+    "password" : "pasahitza",
+    "password_confirmation": "pasahitza",
+    "teacher" : 0
+}
+
+### POST REGISTER
+POST {{url}}/api/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "name" : "Aitor",
+    "email" : "Aitor@gmail.com",
+    "password" : "pasahitza1234",
+    "password_confirmation": "pasahitza1234",
+    "teacher" : 1
+
+}
+
+
+### POST IKASLEA LOGIN
+POST {{url}}/api/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email" : "IkerRodri@gmail.com",
+    "password" : "pasahitza"
+}
+
+### POST IRAKASLEA LOGIN
+POST {{url}}/api/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "email" : "Aitor@gmail.com",
+    "password" : "pasahitza1234"
+}
+
+### POST LOGOUT ERABILTZAILEA
+POST {{url}}/api/logout
+Authorization: Bearer 6|nCybrfozjXYuS2d9sqQ5SJCHSOhsctvRsc0XcYaO90767b32
+Accept: application/json
+
+### GET INDEX MODULUAK
+GET {{url}}/api/moduluak
+
+### POST STORE MODULUK
+POST {{url}}/api/moduluak
+Accept: application/json
+Content-Type: application/json
+
+{
+    "izena" : "Java",
+    "gela" : "2005-01-30"
+}
+
+### PUT UPDATE MODULUAK
+PUT {{url}}/api/moduluak/1
+Accept: application/json
+Content-Type: application/json
+
+{
+    "izena" : "php",
+    "gela" : "2023-01-30"
+}
+
+### DELETE DELETE MODULUAK
+DELETE  {{url}}/api/moduluak/2
+Accept: application/json
+Content-Type: application/json
+
+### GET INDEX IKASLEAK
+GET {{url}}/api/ikasleak
+Authorization: Bearer 8|vusj8EelhluXvPhcxe6I86QA3Ik6sM5pFcAmSk8N2cb9c0c1
+
+### POST USER ERREGISTRATU MODULUAN
+POST {{url}}/api/ikaslemoduluak
+Accept: application/json
+Content-Type: application/json
+Authorization: Bearer 7|QF9Z4MBks6zNZROOwujlnXGmg2Ofgbvpes9YFyPk491d7c72
+
+{
+    "modulua_id": 1
+}
