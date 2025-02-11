@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -58,7 +57,8 @@ class AuthController extends Controller
         $user = $request->user();
     
         if (!$user) {
-            return response()->json(['error' => 'User not authenticated'], 401);
+            return response()->json(['error' => 'User not authenticated']
+            , 401);
         }
 
         $user->tokens->each(function ($token) {
@@ -73,11 +73,11 @@ class AuthController extends Controller
         if ($logged->teacher === 1){
             $ikasleak = User::where('teacher', 0)->get();
             return response()->json([
-                'message' => 'ikasleen zerrenda',
+                'message' => 'Zerrenda irakasleena',
                 'ikasleak' => $ikasleak
             ]);
         } 
-        return response()->json(['message' => 'Etzara irakaslea']);
+        return response()->json(['message' => 'EZ ZARA IRAKASLEA']);
     }
 
 }

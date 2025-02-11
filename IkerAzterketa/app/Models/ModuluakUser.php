@@ -11,6 +11,7 @@ class ModuluakUser extends Model
     use HasFactory;
     
     protected $fillable = [
+        
         'modulua_id',
         'user_id',
     ];

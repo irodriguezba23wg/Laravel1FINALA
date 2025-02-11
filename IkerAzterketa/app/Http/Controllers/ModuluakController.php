@@ -18,7 +18,9 @@ class ModuluakController extends Controller
         $moduluak = Moduluak::find($id);
 
         if (!$moduluak) {
-            return response()->json(['message' => 'Modulua ez da aurkitu'], 404);
+            
+            return response()->json(['message' => 'Modulua ezin da aurkitu'], 
+            404);
         }
 
         return response()->json($moduluak);
@@ -27,6 +29,7 @@ class ModuluakController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
+            
             'izena' => 'required|string|max:255',
             'gela' => 'required|date',
         ]);
@@ -34,7 +37,7 @@ class ModuluakController extends Controller
         $moduluak = Moduluak::create($validatedData);
 
         return response()->json([
-            'message' => 'Modulua ondo sortu da',
+            'message' => 'Modulua ondo sortu egin da',
             'moduluak' => $moduluak
         ], 201);
     }
@@ -44,7 +47,8 @@ class ModuluakController extends Controller
         $moduluak = Moduluak::find($id);
 
         if (!$moduluak) {
-            return response()->json(['message' => 'Modulua ez da aurkitu'], 404);
+            return response()->json(['message' => 'Modulua ezin daaurkitu'],
+             404);
         }
 
         $validatedData = $request->validate([
@@ -55,7 +59,7 @@ class ModuluakController extends Controller
         $moduluak->update($validatedData);
 
         return response()->json([
-            'message' => 'Modulua aldatu da',
+            'message' => 'Moduluaren aldaketa odno egin da',
             'moduluak' => $moduluak
         ]);
     }
@@ -65,13 +69,14 @@ class ModuluakController extends Controller
         $moduluak = Moduluak::find($id);
 
         if (!$moduluak) {
-            return response()->json(['message' => 'Modulua ez da aurkitu'], 404);
+            return response()->json(['message' => 'Modulua ez da aurkitu'],
+             404);
         }
 
         $moduluak->delete();
 
         return response()->json([
-            'message' => 'Modulua ezabatu da'
+            'message' => 'Modulua kenduta'
         ]);
     }
 }

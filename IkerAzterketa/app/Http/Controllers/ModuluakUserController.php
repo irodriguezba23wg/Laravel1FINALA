@@ -16,17 +16,24 @@ class ModuluakUserController extends Controller
         $user = $request->user();
 
         if ($user->teacher === 1) {
-            return response()->json(['message' => 'Ikasleak bakarrik erregistratu daitezke moduloetara.'], 403);
+            
+            return response()->json(['message' => 'Modulora ikasleak sartu daitezke bakarrik.'], 403);
         }
 
+
+
         if ($user->moduluak()->where('modulua_id', $modulua_id)->exists()) {
-            return response()->json(['message' => 'Iada erregistratua zaude.'], 400);
+            return response()->json(['message' => ' Erregistroa ondo .'], 
+            400);
         }
+
+
 
         $user->moduluak()->attach($modulua_id);
 
         return response()->json([
-            'message' => 'Ondo erregistratu da ikaslea modulora.',
+            
+            'message' => 'Modulora ondo sartuta.',
             'modulua_id' => $modulua_id
         ], 200);
     }
