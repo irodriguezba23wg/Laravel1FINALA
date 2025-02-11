@@ -54,7 +54,7 @@ Content-Type: application/json
 
 ### POST LOGOUT ERABILTZAILEA
 POST {{url}}/api/logout
-Authorization: Bearer 6|nCybrfozjXYuS2d9sqQ5SJCHSOhsctvRsc0XcYaO90767b32
+Authorization: Bearer 5|X4FxsXwqo6QLrbAQHc0NuyP0PlpK20VOBI4sH6fP0f9bde97
 Accept: application/json
 
 ### GET INDEX MODULUAK
@@ -87,14 +87,12 @@ Content-Type: application/json
 
 ### GET INDEX IKASLEAK
 GET {{url}}/api/ikasleak
-Authorization: Bearer 8|vusj8EelhluXvPhcxe6I86QA3Ik6sM5pFcAmSk8N2cb9c0c1
+Authorization: Bearer 5|X4FxsXwqo6QLrbAQHc0NuyP0PlpK20VOBI4sH6fP0f9bde97
 
 ### POST USER ERREGISTRATU MODULUAN
 POST {{url}}/api/ikaslemoduluak
 Accept: application/json
 Content-Type: application/json
-Authorization: Bearer 7|QF9Z4MBks6zNZROOwujlnXGmg2Ofgbvpes9YFyPk491d7c72
+Authorization: Bearer 5|X4FxsXwqo6QLrbAQHc0NuyP0PlpK20VOBI4sH6fP0f9bde97
 
-{
-    "modulua_id": 1
-}
+{"modulua_id": 1}
